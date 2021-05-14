@@ -89,7 +89,7 @@ namespace TWIx86.Programs
                         displayText += key.KeyChar;
                     }
                 }
-                userInterface.WriteString(32, 8, displayText, ConsoleColor.White, ConsoleColor.Blue);
+                userInterface.WriteString(32, 8, displayText, ConsoleColor.White, ConsoleColor.DarkCyan);
             }
             if (Core.Running == false)
             {
@@ -129,7 +129,7 @@ namespace TWIx86.Programs
             Draw();
             var evaluator = new ExpressionEvaluator();
             var x = evaluator.evaluate(evaluator.parse(displayText));
-            userInterface.WriteString(32, 8, x.ToString(), ConsoleColor.White, ConsoleColor.Blue);
+            userInterface.WriteString(32, 8, x.ToString(), ConsoleColor.White, ConsoleColor.DarkCyan);
             displayText = "";
         }
     }
