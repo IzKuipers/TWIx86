@@ -14,7 +14,6 @@ namespace TWIx86
         {
             Console.Clear();
             Core.bootSequence();
-            Core.startClock();
         }
 
         protected override void Run()
