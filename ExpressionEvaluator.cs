@@ -77,6 +77,7 @@ namespace TWIx86
 				if (currNum != "")
 				{
 					outQueue.Add(new Token(TokenType.Number, currNum));
+					if (offset < expr.Length) offset--;
 					currNum = "";
 					continue;
 				}
