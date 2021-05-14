@@ -153,24 +153,5 @@ namespace TWIx86
             Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine("\n           " + caption);
         }
-
-        public static async Task SetInterval(Action action, TimeSpan timeout)
-        {
-            await Task.Delay(timeout).ConfigureAwait(false);
-
-            action();
-
-            SetInterval(action, timeout);
-        }
-
-        public static void startClock()
-        {
-            var timer1 = new Timer(_ => {
-                var currentX = Console.CursorLeft; var currentY = Console.CursorTop;
-                Console.SetCursorPosition(0, 0);
-                userInterface.drawRectangle(0, 0, 80, 1, ConsoleColor.DarkCyan);
-                userInterface.WriteString(0, 0, RTC.Hour + ":" + RTC.Minute + ":" + RTC.Second, ConsoleColor.White, ConsoleColor.DarkCyan);
-            }, null, 0, 2000);
-        }
     }
 }
