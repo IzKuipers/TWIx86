@@ -52,7 +52,7 @@ namespace TWIx86.Programs
             setToolbarStatus("TWIx86 Calculator", ConsoleColor.Cyan, ConsoleColor.White);
             Console.SetCursorPosition(0, 0);
             Console.ReadKey();
-            Draw();
+            stopCalculator();
             
         }
 
