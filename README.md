@@ -15,6 +15,6 @@ Want to expand this list? Contact me!
 
 ## Screenshots
 
-![Calculator]("TWIx86Calculator.png")
-![Help]("TWIx86Help.png")
-![Boot Sequence]("TWIx86Boot.png")
+![Calculator](TWIx86Calculator.png)
+![Help](TWIx86Help.png)
+![Boot Sequence](TWIx86Boot.png)
