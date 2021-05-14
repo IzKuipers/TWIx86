@@ -62,9 +62,6 @@ namespace TWIx86
                 case "beep":
                     Console.Beep();
                     break;
-                case "random":
-                    randomNumbers();
-                    break;
                 case "disp":
                     Console.WriteLine("Character Resolution: " + Console.WindowWidth + "x" + Console.WindowHeight + " @ 16 colors");
                     break;
@@ -141,7 +138,6 @@ namespace TWIx86
             Console.WriteLine("HELP             Displays a list of built-in commands");
             Console.WriteLine("HISTORY,HTY      Displays a list of previously entered commands");
             Console.WriteLine("BEEP             Plays a tone from the PC Speaker");
-            Console.WriteLine("RANDOM           Generates a random number");
             Console.WriteLine("DISP             Displays the character resolution and color depth");
             Console.WriteLine("CRASH            Crashes your computer");
             Console.WriteLine("RUN              Runs a built-in program (not yet implemented)");
@@ -278,12 +274,6 @@ namespace TWIx86
                         "Usage: BEEP"
                     );
                     break;
-                case "random":
-                    Console.WriteLine(
-                        "Generates a random number\n\n" +
-                        "Usage: RANDOM"
-                    );
-                    break;
                 case "disp":
                     Console.WriteLine(
                         "Displays information about your display, such as the character resolution.\n\n" +
@@ -354,70 +344,7 @@ namespace TWIx86
                 Console.WriteLine("\nTo clear the history, enter \"HISTORY CLEAR\", or \"HTY CLEAR\"");
             }
         }
-        
-        public static void randomNumbers()
-        {
-            byte[] bytes1 = new byte[100];
-            byte[] bytes2 = new byte[100];
-            Random rnd1 = new Random();
-            Random rnd2 = new Random();
-
-            rnd1.NextBytes(bytes1);
-            rnd2.NextBytes(bytes2);
-
-            Console.WriteLine("Set 1:");
-            for (int ctr = bytes1.GetLowerBound(0);
-                 ctr <= bytes1.GetUpperBound(0);
-                 ctr++)
-            {
-                Console.Write("{0, 5}", bytes1[ctr]);
-                if ((ctr + 1) % 10 == 0) Console.WriteLine();
-            }
-
-            Console.WriteLine();
-
-            Console.WriteLine("Set 2:");
-            for (int ctr = bytes2.GetLowerBound(0);
-                 ctr <= bytes2.GetUpperBound(0);
-                 ctr++)
-            {
-                Console.Write("{0, 5}", bytes2[ctr]);
-                if ((ctr + 1) % 10 == 0) Console.WriteLine();
-            }
-        }
-        
-
-        public static void RandomNumber()
-        {
-            byte[] bytes1 = new byte[100];
-            byte[] bytes2 = new byte[100];
-            Random rnd1 = new Random();
-            Random rnd2 = new Random();
-
-            rnd1.NextBytes(bytes1);
-            rnd2.NextBytes(bytes2);
-
-            Console.WriteLine("First Series:");
-            for (int ctr = bytes1.GetLowerBound(0);
-                 ctr <= bytes1.GetUpperBound(0);
-                 ctr++)
-            {
-                Console.Write("{0, 5}", bytes1[ctr]);
-                if ((ctr + 1) % 10 == 0) Console.WriteLine();
-            }
-
-            Console.WriteLine();
-            Console.WriteLine("Second Series:");
-            for (int ctr = bytes2.GetLowerBound(0);
-                 ctr <= bytes2.GetUpperBound(0);
-                 ctr++)
-            {
-                Console.Write("{0, 5}", bytes2[ctr]);
-                if ((ctr + 1) % 10 == 0) Console.WriteLine();
-            }
-            Console.ReadLine();
-        }
-
+      
         public static void print(string text)
         {
             Console.WriteLine(text);
